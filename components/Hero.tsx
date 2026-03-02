@@ -7,9 +7,10 @@ const Hero: React.FC = () => {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://picsum.photos/1920/1080?grayscale&blur=2" 
+          src="https://i.ibb.co/Y4JqSQSz/9626-BW.jpg" 
           alt="Barbershop Atmosphere" 
           className="w-full h-full object-cover opacity-40"
+          referrerPolicy="no-referrer"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black/30 via-brand-black/60 to-brand-black"></div>
       </div>

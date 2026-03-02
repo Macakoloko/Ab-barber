@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="h-40 w-full bg-gray-800 rounded-lg mt-4 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
                {/* Mock Map */}
-               <img src="https://picsum.photos/400/200?blur=2" alt="Mapa" className="w-full h-full object-cover opacity-50" />
+               <img src="input_file_10.png" alt="Shop View" className="w-full h-full object-cover opacity-50" />
                <div className="absolute inset-0 flex items-center justify-center">
                  <span className="bg-black text-white px-3 py-1 text-xs uppercase tracking-widest">Ver no Maps</span>
                </div>

@@ -19,7 +19,7 @@ const fighters: StyleFighter[] = [
   {
     id: 1,
     name: 'The Fade Master',
-    image: 'https://picsum.photos/600/800?random=10&grayscale',
+    image: 'input_file_8.png',
     description: 'Degradê agressivo nas laterais com topo texturizado. Ideal para quem quer marcar presença.',
     stats: { fade: 98, maintenance: 60, attractiveness: 90 },
     specialty: 'Navalha Afiada'
@@ -27,7 +27,7 @@ const fighters: StyleFighter[] = [
   {
     id: 2,
     name: 'Classic Gentleman',
-    image: 'https://picsum.photos/600/800?random=20&grayscale',
+    image: 'input_file_0.png',
     description: 'Corte tesoura clássico, lateral comportada. Elegância intemporal para o dia-a-dia.',
     stats: { fade: 40, maintenance: 30, attractiveness: 85 },
     specialty: 'Tesoura Precision'
@@ -35,7 +35,7 @@ const fighters: StyleFighter[] = [
   {
     id: 3,
     name: 'Urban Mullet',
-    image: 'https://picsum.photos/600/800?random=30&grayscale',
+    image: 'input_file_18.png',
     description: 'O regresso dos anos 80 com uma pegada moderna. Curto à frente, festa atrás.',
     stats: { fade: 75, maintenance: 80, attractiveness: 95 },
     specialty: 'Estilo Radical'
@@ -43,10 +43,26 @@ const fighters: StyleFighter[] = [
   {
     id: 4,
     name: 'Buzz Cut Pro',
-    image: 'https://picsum.photos/600/800?random=40&grayscale',
+    image: 'input_file_3.png',
     description: 'Militar, prático e limpo. Para quem não quer perder tempo no espelho.',
     stats: { fade: 85, maintenance: 10, attractiveness: 70 },
     specialty: 'Velocidade Máxima'
+  },
+  {
+    id: 5,
+    name: 'Sharp Side Part',
+    image: 'input_file_15.png',
+    description: 'Corte lateral ultra-definido com acabamento impecável. O equilíbrio entre o moderno e o clássico.',
+    stats: { fade: 90, maintenance: 40, attractiveness: 88 },
+    specialty: 'Perfil Definido'
+  },
+  {
+    id: 6,
+    name: 'The Modern Mullet',
+    image: 'input_file_19.png',
+    description: 'Uma reinterpretação arrojada do mullet clássico, com fade lateral e textura superior.',
+    stats: { fade: 80, maintenance: 70, attractiveness: 92 },
+    specialty: 'Design Criativo'
   },
 ];
 

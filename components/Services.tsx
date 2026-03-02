@@ -13,7 +13,7 @@ const services: ServiceItem[] = [
 
 const Services: React.FC = () => {
   return (
-    <section id="serviços" className="py-24 bg-brand-black relative">
+    <section id="serviços" className="py-24 bg-brand-black relative overflow-hidden">
       <div className="container mx-auto px-6">
         <ScrollReveal>
           <h2 className="font-display text-4xl md:text-6xl font-bold text-white mb-16 uppercase text-center md:text-left">
