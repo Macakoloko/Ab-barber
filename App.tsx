@@ -3,7 +3,6 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
 import AIStyleConsultant from './components/AIStyleConsultant';
-import Gallery from './components/Gallery';
 import BentoGallery from './components/BentoGallery';
 import Footer from './components/Footer';
 
@@ -15,7 +14,6 @@ const App: React.FC = () => {
         <Hero />
         <Services />
         <AIStyleConsultant />
-        <Gallery />
         <BentoGallery />
       </main>
       <Footer />

@@ -18,13 +18,18 @@ const Footer: React.FC = () => {
                 Portugal
               </span>
             </p>
-            <div className="h-40 w-full bg-gray-800 rounded-lg mt-4 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500">
+            <a 
+              href="https://www.google.com/maps/search/?api=1&query=Av.+Manuel+Xavier+88+BS+4910-105+Caminha+Portugal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="h-40 w-full bg-gray-800 rounded-lg mt-4 overflow-hidden relative grayscale hover:grayscale-0 transition-all duration-500 block group"
+            >
                {/* Mock Map */}
-               <img src="input_file_10.png" alt="Shop View" className="w-full h-full object-cover opacity-50" />
+               <img src="https://picsum.photos/seed/caminha-map/400/200?grayscale" alt="Mapa" className="w-full h-full object-cover opacity-50 group-hover:opacity-80 transition-opacity" />
                <div className="absolute inset-0 flex items-center justify-center">
-                 <span className="bg-black text-white px-3 py-1 text-xs uppercase tracking-widest">Ver no Maps</span>
+                 <span className="bg-black text-white px-4 py-2 text-xs uppercase tracking-widest border border-white/20 group-hover:bg-white group-hover:text-black transition-colors">Ver no Maps</span>
                </div>
-            </div>
+            </a>
           </ScrollReveal>
 
           <ScrollReveal direction="up" delay={100}>

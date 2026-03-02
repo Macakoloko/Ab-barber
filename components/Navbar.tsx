@@ -152,9 +152,17 @@ const Navbar: React.FC = () => {
                 
                 <div className="flex justify-between items-center pt-6 border-t border-white/10">
                   <div className="flex gap-4">
-                    <Instagram className="text-gray-400 hover:text-white transition-colors" size={20} />
-                    <Phone className="text-gray-400 hover:text-white transition-colors" size={20} />
-                    <MapPin className="text-gray-400 hover:text-white transition-colors" size={20} />
+                    <Instagram className="text-gray-400 hover:text-white transition-colors cursor-pointer" size={20} />
+                    <a href="tel:+351915983446">
+                      <Phone className="text-gray-400 hover:text-white transition-colors" size={20} />
+                    </a>
+                    <a 
+                      href="https://www.google.com/maps/search/?api=1&query=Av.+Manuel+Xavier+88+BS+4910-105+Caminha+Portugal"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <MapPin className="text-gray-400 hover:text-white transition-colors" size={20} />
+                    </a>
                   </div>
                   <span className="text-[10px] font-mono text-gray-600 uppercase tracking-widest">
                     Caminha, Portugal
