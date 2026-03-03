@@ -5,38 +5,45 @@ import ScrollReveal from './ScrollReveal';
 
 const images = [
   {
-    url: 'https://i.ibb.co/tMp5R851/9674.jpg',
-    title: 'THE CUT',
-    description: 'Precision engineering for the modern gentleman.',
-    stats: { precision: 95, style: 90, speed: 85 },
+    url: 'https://s13.gifyu.com/images/bvOoE.gif',
+    title: 'MOICANO',
+    description: 'Arrojado e rebelde. Uma afirmação de individualidade.',
+    stats: { precisão: 90, estilo: 98, velocidade: 85 },
     size: 'col-span-2 row-span-2',
   },
   {
-    url: 'https://i.ibb.co/kg0HJPrV/9726.jpg',
-    title: 'DETAIL',
-    description: 'Every line matters. Every edge counts.',
-    stats: { precision: 99, style: 85, speed: 70 },
+    url: 'https://s13.gifyu.com/images/bvOo9.gif',
+    title: 'TAPER FADE',
+    description: 'Arestas limpas com um degradê suave.',
+    stats: { precisão: 95, estilo: 90, velocidade: 80 },
+    size: 'col-span-2 row-span-1',
+  },
+  {
+    url: 'https://s13.gifyu.com/images/bvOo3.gif',
+    title: 'MID FADE',
+    description: 'O equilíbrio perfeito entre o clássico e o moderno.',
+    stats: { precisão: 92, estilo: 92, velocidade: 85 },
     size: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://i.ibb.co/Jw2KYtT1/9699.jpg',
-    title: 'FADE',
-    description: 'Seamless transitions from skin to style.',
-    stats: { precision: 90, style: 95, speed: 80 },
-    size: 'col-span-1 row-span-2',
-  },
-  {
-    url: 'https://i.ibb.co/kg0HJPrV/9726.jpg',
-    title: 'SHARP',
-    description: 'Defined contours for a powerful presence.',
-    stats: { precision: 92, style: 88, speed: 90 },
+    url: 'https://s13.gifyu.com/images/bvOow.gif',
+    title: 'LOW FADE',
+    description: 'Subtil e sofisticado.',
+    stats: { precisão: 94, estilo: 88, velocidade: 75 },
     size: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://i.ibb.co/KR6gDdM/9671.jpg',
-    title: 'FINISH',
-    description: 'The final touch that defines the look.',
-    stats: { precision: 88, style: 99, speed: 75 },
+    url: 'https://s13.gifyu.com/images/bvOoh.gif',
+    title: 'MID TAPER',
+    description: 'Patilhas e nuca bem definidas.',
+    stats: { precisão: 96, estilo: 85, velocidade: 90 },
+    size: 'col-span-2 row-span-1',
+  },
+  {
+    url: 'https://s13.gifyu.com/images/bvOof.gif',
+    title: 'HIGH TAPER',
+    description: 'Alto contraste para o máximo impacto.',
+    stats: { precisão: 88, estilo: 95, velocidade: 85 },
     size: 'col-span-2 row-span-1',
   },
 ];
@@ -54,16 +61,16 @@ const BentoGallery: React.FC = () => {
           <div className="mb-12 flex items-end justify-between">
             <div>
               <h2 className="font-display text-4xl md:text-6xl text-white uppercase leading-none">
-                Squad <span className="text-gray-500">Selection</span>
+                Seleção de <span className="text-gray-500">Plantel</span>
               </h2>
               <p className="text-gray-400 mt-4 font-mono text-sm tracking-widest">
-                [ SELECT YOUR STYLE_ ]
+                [ SELECIONA O TEU ESTILO_ ]
               </p>
             </div>
             <div className="hidden md:block text-right">
               <span className="text-xs font-mono text-gray-600 uppercase tracking-tighter">
-                System Status: Online<br />
-                Location: Caminha_PT
+                Estado do Sistema: Online<br />
+                Localização: Caminha_PT
               </span>
             </div>
           </div>
@@ -137,17 +144,17 @@ const BentoGallery: React.FC = () => {
         <div className="mt-8 pt-4 border-t border-white/5 flex flex-wrap justify-between items-center gap-4">
           <div className="flex gap-6">
             <div className="flex flex-col">
-              <span className="text-[10px] text-gray-600 uppercase font-mono">Difficulty</span>
-              <span className="text-xs text-white font-mono">LEGENDARY</span>
+              <span className="text-[10px] text-gray-600 uppercase font-mono">Dificuldade</span>
+              <span className="text-xs text-white font-mono">LENDÁRIO</span>
             </div>
             <div className="flex flex-col">
-              <span className="text-[10px] text-gray-600 uppercase font-mono">Season</span>
+              <span className="text-[10px] text-gray-600 uppercase font-mono">Época</span>
               <span className="text-xs text-white font-mono">2024/25</span>
             </div>
           </div>
           <div className="flex items-center gap-2">
             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-            <span className="text-[10px] text-gray-400 font-mono uppercase tracking-widest">Server: Caminha_Main_01</span>
+            <span className="text-[10px] text-gray-400 font-mono uppercase tracking-widest">Servidor: Caminha_Main_01</span>
           </div>
         </div>
       </div>
@@ -204,7 +211,7 @@ const BentoGallery: React.FC = () => {
                     animate={{ opacity: 1 }}
                     className="text-gray-500 font-mono text-sm tracking-[0.5em] uppercase block mb-2"
                   >
-                    Selected Style_
+                    Estilo Selecionado_
                   </motion.span>
                   <h2 className="font-display text-6xl md:text-8xl text-white uppercase italic leading-none tracking-tighter">
                     {selectedImg.title}
@@ -216,7 +223,7 @@ const BentoGallery: React.FC = () => {
                 </p>
 
                 <div className="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10">
-                  <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Performance Metrics</h4>
+                  <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Métricas de Desempenho</h4>
                   {Object.entries(selectedImg.stats).map(([stat, value], idx) => (
                     <div key={stat} className="space-y-2">
                       <div className="flex justify-between items-end">
@@ -244,7 +251,7 @@ const BentoGallery: React.FC = () => {
                   }}
                   className="w-full bg-white text-black py-6 font-display text-2xl uppercase italic flex items-center justify-center gap-4 group"
                 >
-                  Confirm Selection
+                  Confirmar Seleção
                   <ChevronRight className="group-hover:translate-x-2 transition-transform" />
                 </motion.button>
               </motion.div>
