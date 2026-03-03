@@ -63,7 +63,7 @@ const BentoGallery: React.FC = () => {
   }, [selectedImg]);
 
   return (
-    <section id="bento-gallery" className="relative py-24 bg-brand-black overflow-hidden">
+    <section id="galeria" className="relative py-24 bg-brand-black overflow-hidden">
       {/* Scanline Effect Overlay */}
       <div className="absolute inset-0 pointer-events-none z-40 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       
@@ -176,73 +176,72 @@ const BentoGallery: React.FC = () => {
           <motion.div 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl overflow-y-auto"
+            exit={{ opacity: 0, transition: { duration: 0.3 } }}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl overflow-hidden flex flex-col"
           >
-            <div className="min-h-full w-full flex items-center justify-center p-4 md:p-12 relative">
+            <div className="flex-1 w-full flex flex-col md:grid md:grid-cols-2 md:gap-16 items-center p-4 md:p-12 relative container max-w-6xl mx-auto h-full">
               <button 
                 onClick={() => setSelectedImg(null)}
-                className="fixed top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors z-[110]"
+                className="absolute top-3 right-3 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors z-[110]"
               >
-                <X size={32} />
+                <X size={28} />
               </button>
 
-              <div className="container max-w-6xl w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center pt-12 md:pt-0">
-                {/* Left Side: Image with Glitch/Game Effect */}
-                <motion.div 
-                  initial={{ x: -100, opacity: 0, scale: 0.8 }}
-                  animate={{ x: 0, opacity: 1, scale: 1 }}
-                  transition={{ type: "spring", damping: 20 }}
-                  className="relative aspect-[3/4] md:aspect-square group"
-                >
-                <div className="absolute inset-0 border-2 border-white/20 rounded-2xl overflow-hidden">
+              {/* Left Side: Image */}
+              <motion.div 
+                initial={{ y: -20, opacity: 0, scale: 0.9 }}
+                animate={{ y: 0, opacity: 1, scale: 1 }}
+                exit={{ y: -20, opacity: 0, scale: 0.9, transition: { duration: 0.2 } }}
+                transition={{ type: "spring", damping: 20 }}
+                className="relative w-full h-[35vh] md:h-auto md:aspect-square group shrink-0 mb-3 md:mb-0"
+              >
+                <div className="absolute inset-0 border-2 border-white/20 rounded-xl md:rounded-2xl overflow-hidden">
                   <img 
                     src={selectedImg.url} 
                     alt={selectedImg.title}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                   />
-                  {/* Scanline on modal image */}
                   <div className="absolute inset-0 pointer-events-none opacity-20 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%)] bg-[length:100%_4px]" />
                 </div>
-                {/* Decorative Elements */}
-                <div className="absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-white" />
-                <div className="absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-white" />
+                {/* Decorative Elements - Hidden on mobile for space */}
+                <div className="hidden md:block absolute -top-4 -left-4 w-12 h-12 border-t-4 border-l-4 border-white" />
+                <div className="hidden md:block absolute -bottom-4 -right-4 w-12 h-12 border-b-4 border-r-4 border-white" />
               </motion.div>
 
               {/* Right Side: Stats & Info */}
               <motion.div 
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                initial={{ y: 20, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 20, opacity: 0, transition: { duration: 0.2 } }}
                 transition={{ type: "spring", damping: 20, delay: 0.1 }}
-                className="space-y-8"
+                className="flex flex-col h-full md:h-auto justify-between md:justify-center w-full overflow-hidden"
               >
-                <div>
+                <div className="shrink-0">
                   <motion.span 
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
-                    className="text-gray-500 font-mono text-sm tracking-[0.5em] uppercase block mb-2"
+                    className="text-gray-500 font-mono text-[10px] md:text-sm tracking-[0.3em] uppercase block mb-1 md:mb-2"
                   >
                     Estilo Selecionado_
                   </motion.span>
-                  <h2 className="font-display text-6xl md:text-8xl text-white uppercase italic leading-none tracking-tighter">
+                  <h2 className="font-display text-3xl md:text-8xl text-white uppercase italic leading-none tracking-tighter mb-2 md:mb-4">
                     {selectedImg.title}
                   </h2>
+                  <p className="text-gray-400 text-xs md:text-xl font-light leading-snug md:leading-relaxed mb-3 md:mb-8 line-clamp-2 md:line-clamp-none">
+                    {selectedImg.description}
+                  </p>
                 </div>
 
-                <p className="text-gray-400 text-lg md:text-xl font-light leading-relaxed">
-                  {selectedImg.description}
-                </p>
-
-                <div className="space-y-6 bg-white/5 p-8 rounded-2xl border border-white/10">
-                  <h4 className="text-xs font-mono text-gray-500 uppercase tracking-widest mb-4">Métricas de Desempenho</h4>
+                <div className="space-y-2 md:space-y-6 bg-white/5 p-3 md:p-8 rounded-lg md:rounded-2xl border border-white/10 mb-3 md:mb-8 overflow-y-auto md:overflow-visible custom-scrollbar">
+                  <h4 className="text-[10px] md:text-xs font-mono text-gray-500 uppercase tracking-widest mb-1 md:mb-4">Métricas</h4>
                   {Object.entries(selectedImg.stats).map(([stat, value], idx) => (
-                    <div key={stat} className="space-y-2">
+                    <div key={stat} className="space-y-1 md:space-y-2">
                       <div className="flex justify-between items-end">
-                        <span className="text-sm font-mono text-white uppercase">{stat}</span>
-                        <span className="text-2xl font-display text-white italic">{value}</span>
+                        <span className="text-[10px] md:text-sm font-mono text-white uppercase">{stat}</span>
+                        <span className="text-sm md:text-2xl font-display text-white italic">{value}</span>
                       </div>
-                      <div className="h-2 bg-white/10 rounded-full overflow-hidden">
+                      <div className="h-1 md:h-2 bg-white/10 rounded-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}
                           animate={{ width: `${value}%` }}
@@ -261,14 +260,13 @@ const BentoGallery: React.FC = () => {
                     setSelectedImg(null);
                     document.getElementById('marcacao')?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="w-full bg-white text-black py-6 font-display text-2xl uppercase italic flex items-center justify-center gap-4 group"
+                  className="w-full bg-white text-black py-3 md:py-6 font-display text-lg md:text-2xl uppercase italic flex items-center justify-center gap-2 md:gap-4 group shrink-0 rounded-lg md:rounded-none"
                 >
-                  Confirmar Seleção
-                  <ChevronRight className="group-hover:translate-x-2 transition-transform" />
+                  Confirmar
+                  <ChevronRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
                 </motion.button>
               </motion.div>
             </div>
-          </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -4,7 +4,7 @@ import ScrollReveal from './ScrollReveal';
 
 const Footer: React.FC = () => {
   return (
-    <footer id="localização" className="bg-brand-dark pt-24 pb-12 border-t border-white/5">
+    <footer id="localizacao" className="bg-brand-dark pt-24 pb-12 border-t border-white/5">
       <div className="container mx-auto px-6">
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           
