@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { X, ChevronRight } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
@@ -50,6 +50,17 @@ const images = [
 
 const BentoGallery: React.FC = () => {
   const [selectedImg, setSelectedImg] = useState<typeof images[0] | null>(null);
+
+  useEffect(() => {
+    if (selectedImg) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedImg]);
 
   return (
     <section id="bento-gallery" className="relative py-24 bg-brand-black overflow-hidden">
@@ -166,23 +177,24 @@ const BentoGallery: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl overflow-y-auto"
           >
-            <button 
-              onClick={() => setSelectedImg(null)}
-              className="absolute top-8 right-8 text-white/50 hover:text-white transition-colors z-[110]"
-            >
-              <X size={32} />
-            </button>
-
-            <div className="container max-w-6xl w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center">
-              {/* Left Side: Image with Glitch/Game Effect */}
-              <motion.div 
-                initial={{ x: -100, opacity: 0, scale: 0.8 }}
-                animate={{ x: 0, opacity: 1, scale: 1 }}
-                transition={{ type: "spring", damping: 20 }}
-                className="relative aspect-[3/4] md:aspect-square group"
+            <div className="min-h-full w-full flex items-center justify-center p-4 md:p-12 relative">
+              <button 
+                onClick={() => setSelectedImg(null)}
+                className="fixed top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors z-[110]"
               >
+                <X size={32} />
+              </button>
+
+              <div className="container max-w-6xl w-full grid md:grid-cols-2 gap-8 md:gap-16 items-center pt-12 md:pt-0">
+                {/* Left Side: Image with Glitch/Game Effect */}
+                <motion.div 
+                  initial={{ x: -100, opacity: 0, scale: 0.8 }}
+                  animate={{ x: 0, opacity: 1, scale: 1 }}
+                  transition={{ type: "spring", damping: 20 }}
+                  className="relative aspect-[3/4] md:aspect-square group"
+                >
                 <div className="absolute inset-0 border-2 border-white/20 rounded-2xl overflow-hidden">
                   <img 
                     src={selectedImg.url} 
@@ -256,6 +268,7 @@ const BentoGallery: React.FC = () => {
                 </motion.button>
               </motion.div>
             </div>
+          </div>
           </motion.div>
         )}
       </AnimatePresence>

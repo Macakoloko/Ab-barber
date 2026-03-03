@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ab-barber-caminha.com/sitemap.xml

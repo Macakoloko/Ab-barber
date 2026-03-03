@@ -3,11 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>AB Barber | Caminha</title>
+    <title>AB Barber | A Melhor Barbearia em Caminha</title>
+    <meta name="description" content="AB Barber em Caminha. Cortes modernos, fades, barbas e estilo underground. Agende já o seu corte com os melhores profissionais da região.">
+    <meta name="keywords" content="barbearia caminha, barbeiro caminha, cortes de cabelo homem, fade, barba, estilo masculino, cabeleireiro homem caminha">
+    <meta name="author" content="AB Barber">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ab-barber-caminha.com/">
+    <meta property="og:title" content="AB Barber | A Melhor Barbearia em Caminha">
+    <meta property="og:description" content="Estilo, precisão e atitude. A tua barbearia de referência em Caminha.">
+    <meta property="og:image" content="https://i.ibb.co/tMp5R851/9674.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ab-barber-caminha.com/">
+    <meta property="twitter:title" content="AB Barber | A Melhor Barbearia em Caminha">
+    <meta property="twitter:description" content="Estilo, precisão e atitude. A tua barbearia de referência em Caminha.">
+    <meta property="twitter:image" content="https://i.ibb.co/tMp5R851/9674.jpg">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarberShop",
+      "name": "AB Barber",
+      "image": "https://i.ibb.co/tMp5R851/9674.jpg",
+      "@id": "https://ab-barber-caminha.com",
+      "url": "https://ab-barber-caminha.com",
+      "telephone": "+351915983446",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Manuel Xavier 88 BS",
+        "addressLocality": "Caminha",
+        "postalCode": "4910-105",
+        "addressCountry": "PT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.876,
+        "longitude": -8.839
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "10:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      ],
+      "priceRange": "$$"
+    }
+    </script>
+
     <script>
       tailwind.config = {
         theme: {
@@ -48,6 +114,23 @@
       .scrollbar-hide {
           -ms-overflow-style: none;
           scrollbar-width: none;
+      }
+      
+      /* Lenis Smooth Scroll */
+      html.lenis, html.lenis body {
+        height: auto;
+      }
+      .lenis.lenis-smooth {
+        scroll-behavior: auto !important;
+      }
+      .lenis.lenis-smooth [data-lenis-prevent] {
+        overscroll-behavior: contain;
+      }
+      .lenis.lenis-stopped {
+        overflow: hidden;
+      }
+      .lenis.lenis-scrolling iframe {
+        pointer-events: none;
       }
     </style>
   <script type="importmap">
