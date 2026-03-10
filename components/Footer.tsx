@@ -1,5 +1,5 @@
 import React from 'react';
-import { MapPin, Phone, Instagram, Facebook, Clock } from 'lucide-react';
+import { MapPin, Phone, Instagram, Clock } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 
 const Footer: React.FC = () => {
@@ -57,11 +57,8 @@ const Footer: React.FC = () => {
               <a href="tel:+351915983446" className="hover:text-white transition-colors">+351 915 983 446</a>
             </p>
             <div className="flex gap-4">
-              <a href="#" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
+              <a href="https://www.instagram.com/abreubarber98/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="w-10 h-10 border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white hover:text-black transition-all">
-                <Facebook className="w-5 h-5" />
               </a>
             </div>
           </ScrollReveal>

@@ -55,11 +55,7 @@ const AIStyleConsultant: React.FC = () => {
                 <span className="text-green-500 text-[10px] font-bold uppercase tracking-widest">Online</span>
             </div>
 
-            <h3 className="font-display text-2xl text-white uppercase mb-8">
-              Próxima Vaga: <span className="text-gray-500">Hoje 14:30</span>
-            </h3>
-
-            <div className="space-y-4">
+            <div className="space-y-4 pt-8 md:pt-4">
               <button 
                 onClick={() => window.open('https://buk.pt/marca-aqui', '_blank')}
                 className="w-full bg-white text-black font-display font-bold text-xl md:text-2xl uppercase py-5 md:py-6 tracking-wider hover:bg-gray-200 transition-all active:scale-[0.98] flex items-center justify-center gap-3 group/btn"
@@ -69,9 +65,9 @@ const AIStyleConsultant: React.FC = () => {
               </button>
               
               <div className="grid grid-cols-2 gap-4">
-                 <button className="border border-white/10 text-white py-4 uppercase text-[10px] md:text-xs font-bold tracking-widest hover:bg-white/5 hover:border-white/30 transition-all flex items-center justify-center gap-2">
+                 <a href="https://wa.me/351915983446" target="_blank" rel="noopener noreferrer" className="border border-white/10 text-white py-4 uppercase text-[10px] md:text-xs font-bold tracking-widest hover:bg-white/5 hover:border-white/30 transition-all flex items-center justify-center gap-2">
                     <MessageCircle className="w-4 h-4" /> WhatsApp
-                 </button>
+                 </a>
                  <a href="tel:+351915983446" className="border border-white/10 text-white py-4 uppercase text-[10px] md:text-xs font-bold tracking-widest hover:bg-white/5 hover:border-white/30 transition-all flex items-center justify-center gap-2">
                     <Phone className="w-4 h-4" /> Ligar
                  </a>
