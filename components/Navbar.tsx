@@ -136,12 +136,12 @@ const Navbar: React.FC = () => {
               ))}
             </div>
 
-            <div className="mt-auto relative z-10">
+            <div className="mt-auto relative z-10 pt-12">
               <motion.div 
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.6 }}
-                className="flex flex-col gap-6"
+                className="flex flex-col gap-8"
               >
                 <button 
                   onClick={() => scrollToSection('marcação')}

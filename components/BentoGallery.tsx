@@ -5,42 +5,48 @@ import ScrollReveal from './ScrollReveal';
 
 const images = [
   {
-    url: 'https://s13.gifyu.com/images/bvOoE.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOoE.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOoE.gif',
     title: 'MOICANO',
     description: 'Arrojado e rebelde. Uma afirmação de individualidade.',
     stats: { precisão: 90, estilo: 98, velocidade: 85 },
     size: 'col-span-2 row-span-2',
   },
   {
-    url: 'https://s13.gifyu.com/images/bvOo9.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOo9.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOo9.gif',
     title: 'TAPER FADE',
     description: 'Arestas limpas com um degradê suave.',
     stats: { precisão: 95, estilo: 90, velocidade: 80 },
     size: 'col-span-2 row-span-1',
   },
   {
-    url: 'https://s13.gifyu.com/images/bvOo3.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOo3.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOo3.gif',
     title: 'MID FADE',
     description: 'O equilíbrio perfeito entre o clássico e o moderno.',
     stats: { precisão: 92, estilo: 92, velocidade: 85 },
     size: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://s13.gifyu.com/images/bvOow.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOow.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOow.gif',
     title: 'LOW FADE',
     description: 'Subtil e sofisticado.',
     stats: { precisão: 94, estilo: 88, velocidade: 75 },
     size: 'col-span-1 row-span-1',
   },
   {
-    url: 'https://s13.gifyu.com/images/bvOoh.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOoh.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOoh.gif',
     title: 'MID TAPER',
     description: 'Patilhas e nuca bem definidas.',
     stats: { precisão: 96, estilo: 85, velocidade: 90 },
     size: 'col-span-2 row-span-1',
   },
   {
-    url: 'https://s13.gifyu.com/images/bvOof.gif',
+    staticUrl: 'https://s13.gifyu.com/images/bvOof.gif',
+    gifUrl: 'https://s13.gifyu.com/images/bvOof.gif',
     title: 'HIGH TAPER',
     description: 'Alto contraste para o máximo impacto.',
     stats: { precisão: 88, estilo: 95, velocidade: 85 },
@@ -64,8 +70,8 @@ const BentoGallery: React.FC = () => {
 
   return (
     <section id="galeria" className="relative py-24 bg-brand-black overflow-hidden">
-      {/* Scanline Effect Overlay */}
-      <div className="absolute inset-0 pointer-events-none z-40 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
+      {/* Scanline Effect Overlay - Hidden on Mobile for Performance */}
+      <div className="hidden md:block absolute inset-0 pointer-events-none z-40 opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%]" />
       
       <div className="container mx-auto px-6 relative z-10">
         <ScrollReveal direction="up">
@@ -99,12 +105,13 @@ const BentoGallery: React.FC = () => {
               whileHover={{ scale: 0.98 }}
               onClick={() => setSelectedImg(img)}
             >
-              {/* Image */}
+              {/* Image - Static in Grid */}
               <img
-                src={img.url}
+                src={img.staticUrl}
                 alt={img.title}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:rotate-1"
                 referrerPolicy="no-referrer"
+                loading="lazy"
               />
 
               {/* Overlay - Game Style */}
@@ -177,7 +184,7 @@ const BentoGallery: React.FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0, transition: { duration: 0.3 } }}
-            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl overflow-hidden flex flex-col"
+            className="fixed inset-0 z-[100] bg-black/95 md:backdrop-blur-xl overflow-hidden flex flex-col"
           >
             <div className="flex-1 w-full flex flex-col md:grid md:grid-cols-2 md:gap-16 items-center p-4 md:p-12 relative container max-w-6xl mx-auto h-full">
               <button 
@@ -187,7 +194,7 @@ const BentoGallery: React.FC = () => {
                 <X size={28} />
               </button>
 
-              {/* Left Side: Image */}
+              {/* Left Side: Image - GIF plays here */}
               <motion.div 
                 initial={{ y: -20, opacity: 0, scale: 0.9 }}
                 animate={{ y: 0, opacity: 1, scale: 1 }}
@@ -197,7 +204,7 @@ const BentoGallery: React.FC = () => {
               >
                 <div className="absolute inset-0 border-2 border-white/20 rounded-xl md:rounded-2xl overflow-hidden">
                   <img 
-                    src={selectedImg.url} 
+                    src={selectedImg.gifUrl} 
                     alt={selectedImg.title}
                     className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
